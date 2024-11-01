@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "20px",
+              "2xl": "100px",
+            },
+          },
+          extend: {
+            colors: {
+              oq: "var(--oq)",
+              qora: "var(--qora)",
+              seri: "var(--seri)",
+              oqroq: "var(--oqroq)",
+              qoraa: "var(--qoraa)",
+              seriyroq: "var(--seriyroq)",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --oq: #f4f4f4;
+          --qora: #10100f;
+          --oqroq: #d1d6e0;
+          --seriy: #313234;
+          --qoraa: #000000;
+          --seriyroq: #cfd2d8;
+        }
+
+        .dark {
+          --oq: #10100f;
+          --qora: #f4f4f4;
+          --oqroq: #313234;
+          --seriy: #d1d6e0;
+          --qoraa: #cfd2d8;
+          --seriyroq: #000000;
+        }
+      }
+
+      .bg-white {
+        background-color: transparent !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="mobile-menu"
+      class="px-6 fixed top-0 right-[-1000px] lg:hidden w-full h-screen bg-oq z-50 duration-100"
+    >
+      <div class="flex justify-between border-b border-qora w-full pb-2 pt-3">
+        <img
+          src="https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg"
+          alt=""
+        />
+        <div class="flex gap-5 items-center">
+          <i class="fa-regular fa-user text-qora"></i>
+          <i class="fa-solid fa-location-dot text-qora"></i>
+          <i
+            id="darkmode-btn2"
+            class="cursor-pointer text-qora fa-solid fa-circle-half-stroke flex"
+          ></i>
+
+          <button id="closeBtn" class="text-red-500 text-2xl">X</button>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center pt-5">
+        <ul class="flex flex-col items-start gap-6 pt-16 cursor-pointer">
+          <li
+            class="hover:opacity-70 text-qora cursor-pointer flex items-center justify-between gap-[95px]"
+          >
+            Автомобили <i class="fa-solid fa-angle-right text-lg text-qora"></i>
+          </li>
+          <li
+            class="hover:opacity-70 text-qora cursor-pointer flex items-center justify-between gap-[68px]"
+          >
+            Электромобили
+            <i class="fa-solid fa-angle-right text-lg text-qora"></i>
+          </li>
+          <li
+            class="hover:opacity-70 text-qora cursor-pointer flex items-center justify-between gap-[97px]"
+          >
+            Владельцам <i class="fa-solid fa-angle-right text-lg text-qora"></i>
+          </li>
+          <li
+            class="hover:opacity-70 text-qora cursor-pointer flex items-center justify-between gap-16"
+          >
+            Покупка онлайн
+            <i class="fa-solid fa-angle-right text-lg text-qora"></i>
+          </li>
+          <li
+            class="hover:opacity-70 text-qora cursor-pointer flex items-center justify-between gap-[70px]"
+          >
+            Больше о BMW
+            <i class="fa-solid fa-angle-right text-lg text-qora"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div
+        class="bg-[url(/img/banner_new.jpg)] bg-no-repeat bg-center bg-cover"
+        style="width: 100%; height: 100vh"
+      >
+        <div
+          class="hidden lg:flex absolute top-0 left-0 h-[500px] bg-gradient-to-b from-seriyroq to-transparent w-full"
+        ></div>
+        <header
+          class="container relative pt-5 flex justify-between items-center pb-3 border-b border-qora"
+        >
+          <div class="z-[1] flex justify-between gap-14">
+            <img
+              class=""
+              src="https://www.bmw.ru/content/dam/bmw/common/images/logo-icons/BMW/BMW_White_Logo.svg.asset.1670245093434.svg"
+              alt="logo"
+            />
+            <ul
+              class="hidden text-qora font-semibold text-[17px] xl:flex justify-between gap-7 items-center"
+            >
+              <li
+                class="hover:opacity-80 hover:border-b-2 pb-3 border-blue-600"
+              >
+                Автомобили
+              </li>
+              <li
+                class="hover:opacity-80 hover:border-b-2 pb-3 border-blue-600"
+              >
+                Электромобили
+              </li>
+              <li
+                class="hover:opacity-80 hover:border-b-2 pb-3 border-blue-600"
+              >
+                Владельцам
+              </li>
+              <li
+                class="hover:opacity-80 hover:border-b-2 pb-3 border-blue-600"
+              >
+                Покупка онлайн
+              </li>
+              <li
+                class="hover:opacity-80 hover:border-b-2 pb-3 border-blue-600"
+              >
+                Больше о BMW
+              </li>
+            </ul>
+          </div>
+          <div class="z-[1] text-qora text-2xl flex gap-7">
+            <i
+              id="darkmode-btn"
+              class="cursor-pointer text-qora fa-solid fa-circle-half-stroke hidden lg:flex"
+            ></i>
+            <i
+              class="hover:border-b-2 pb-3 border-blue-600 fa-regular fa-user"
+            ></i>
+            <i
+              class="hover:border-b-2 pb-3 border-blue-600 fa-solid fa-location-dot"
+            ></i>
+            <i
+              class="active:opacity-80 hover:border-b-2 pb-3 border-blue-600 fa-solid fa-magnifying-glass"
+            ></i>
+            <i
+              id="burger_btn"
+              class="cursor-pointer fa-solid fa-bars flex lg:hidden"
+            ></i>
+          </div>
+        </header>
+        <div class="z-[2] absolute">
+          <section class="container text-qora">
+            <h1 class="text-4xl font-light pt-16 lg:pl-16">
+              ВСЕ МЕНЯЕТСЯ. ЦЕННОСТИ ОСТАЮТСЯ.
+            </h1>
+          </section>
+        </div>
+      </div>
+      <section class="pt-16 bg-oq pb-12">
+        <div class="container">
+          <h1 class="text-center text-qora">ВАШ BMW</h1>
+          <h1 class="text-qora text-4xl text-center mt-8 mb-5">
+            ВЫБЕРИТЕ ДЛЯ СЕБЯ
+          </h1>
+          <div class="flex-col lg:flex-row flex items-center justify-center">
+            <div class="flex flex-col items-center">
+              <img width="450px" src="img/img1.png" alt="" />
+              <p class="text-qora text-[30px] font-light pb-7">
+                Запись на сервис
+              </p>
+              <button
+                class="px-5 py-3 rounded-md border-[2px] border-qora text-qora font-semibold"
+              >
+                Подробнее
+              </button>
+            </div>
+            <div class="flex flex-col items-center">
+              <img width="450px" src="img/img2.png" alt="" />
+              <p class="text-qora text-[30px] font-light pb-7">
+                Автомобили с пробегом
+              </p>
+              <button
+                class="px-5 py-3 rounded-md border-[2px] border-qora text-qora font-semibold"
+              >
+                Найти сейчас
+              </button>
+            </div>
+            <div class="flex flex-col items-center">
+              <img width="450px" src="img/img3.png" alt="" />
+              <p class="text-qora text-[30px] font-light pb-7">Дилер BMW</p>
+              <button
+                class="px-5 py-3 rounded-md border-[2px] border-qora text-qora font-semibold"
+              >
+                Подробнее
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-[url(/img/parkovka.jpg)] bg-no-repeat bg-center bg-cover h-[450px] flex items-end md:items-center text-center md:text-start md:justify-start justify-center p-10"
+      >
+        <div class="text-oq container">
+          <p>АВТОМОБИЛИ С ПРОБЕГОМ</p>
+          <p class="pb-10 pt-4 text-5xl font-light">BMW С ПРОБЕГОМ В НАЛИЧИИ</p>
+          <button class="py-3 px-20 rounded-md border border-oq">
+            Узнать больше
+          </button>
+        </div>
+      </section>
+      <section class="bg-oq pt-10 pb-16">
+        <div
+          class="container flex flex-col items-start gap-7 lg:flex-row lg:justify-between lg:items-center"
+        >
+          <img width="600px" src="img/bmw_fanat.webp" alt="" />
+          <div class="text-qora">
+            <p>МАГАЗИН АКСЕССУАРОВ BMW</p>
+            <p class="text-4xl font-light mt-5">
+              ОТКРОЙТЕ ДЛЯ СЕБЯ МИР АКСЕССУАРОВ BMW.
+            </p>
+            <p class="text-xl mt-3 mb-7">
+              Оригинальные аксессуары для вашей семьи и вашего автомобиля BMW.
+            </p>
+            <button class="px-14 py-4 rounded border border-qora">
+              Перейти в магазин
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="">
+      <div class="bg-oqroq">
+        <div class="container">
+          <div
+            class="hidden pt-16 lg:flex flex-row flex items-start justify-between text-qora"
+          >
+            <div>
+              <h1 class="text-[14px] pb-6">Выбор и покупка</h1>
+              <ul class="flex flex-col gap-3 font-semibold opacity-70">
+                <li>Модельный ряд</li>
+                <li>Тест-драйв</li>
+                <li>Автомобили с пробегом</li>
+                <li>BMW Premium Selection</li>
+                <li>Финансовые сервисы</li>
+                <li>Корпоративные продажи</li>
+              </ul>
+            </div>
+            <div>
+              <h1 class="text-[14px] pb-6">Сервис и аксессуары</h1>
+              <ul class="flex flex-col gap-3 font-semibold opacity-70">
+                <li>Запись на сервис</li>
+                <li>Аксессуарный конфигуратор</li>
+                <li>Магазин Аксессуаров BMW</li>
+                <li>Программа помощи на дорогах</li>
+                <li>BMW Lifestyle</li>
+              </ul>
+            </div>
+            <div>
+              <h1 class="text-[14px] pb-6">BMW Россия</h1>
+              <ul class="flex flex-col gap-3 font-semibold opacity-70">
+                <li>Модельный ряд</li>
+                <li>Контакты</li>
+                <li>Обратная связь</li>
+                <li>FAQ</li>
+                <li>Дилерская сеть</li>
+                <li>Стать партнером</li>
+              </ul>
+            </div>
+            <div>
+              <h1 class="text-[14px] pb-6">BMW Group</h1>
+              <ul class="flex flex-col gap-3 font-semibold opacity-70">
+                <li>BMW.com</li>
+                <li>BMW Group</li>
+                <li>BMW M Driving Experience</li>
+                <li>BMW Motorrad</li>
+                <li>MINI</li>
+                <li>Brand Experience Centre</li>
+                <li>BMW Excellence Club</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            id="accordion-flush"
+            data-accordion="collapse"
+            data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+            data-inactive-classes="text-gray-500 dark:text-gray-400"
+            class="lg:hidden bg-oqroq"
+          >
+            <h2 id="accordion-flush-heading-1">
+              <button
+                type="button"
+                class="bg-transparent flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-flush-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-flush-body-1"
+              >
+                <span>Выбор и покупка</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-1"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-1"
+            >
+              <ul class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  Модельный ряд
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">Тест-драйв</li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Автомобили с пробегом
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  BMW Premium Selection
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Финансовые сервисы
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Корпоративные продажи
+                </li>
+              </ul>
+            </div>
+            <h2 id="accordion-flush-heading-1">
+              <button
+                type="button"
+                id="accordion-btn"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-flush-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-flush-body-1"
+              >
+                <span>Сервис и аксессуары</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-1"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-1"
+            >
+              <ul class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  Запись на сервис
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Аксессуарный конфигуратор
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Магазин Аксессуаров BMW
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Программа помощи на дорогах
+                </li>
+                <li class="text-gray-500 dark:text-gray-400">BMW Lifestyle</li>
+              </ul>
+            </div>
+            <h2 id="accordion-flush-heading-2">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-flush-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-2"
+              >
+                <span>BMW Россия</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-2"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-2"
+            >
+              <ul class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <li class="mb-2 text-gray-500 dark:text-gray-400">Контакты</li>
+                <li class="text-gray-500 dark:text-gray-400">Обратная связь</li>
+                <li class="text-gray-500 dark:text-gray-400">Дилерская сеть</li>
+                <li class="text-gray-500 dark:text-gray-400">
+                  Стать партнером по качеству
+                </li>
+              </ul>
+            </div>
+            <h2 id="accordion-flush-heading-3">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-flush-body-3"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-3"
+              >
+                <span>BWM Group</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-3"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-3"
+            >
+              <ul class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <li class="mb-2 text-gray-500 dark:text-gray-400">BMW.com</li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">BMW Group</li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  BMW M Driving Experience
+                </li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  BMW Motorrad
+                </li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">MINI</li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  Brand Experience Centre
+                </li>
+                <li class="mb-2 text-gray-500 dark:text-gray-400">
+                  BMW Excellence Club
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 pt-7 pb-7">
+            <a href="https://www.youtube.com/user/BMWinRussia"
+              ><img width="40px" src="img/youtube.png" alt=""
+            /></a>
+            <a href="https://m.vk.com/bmw"
+              ><img width="40px" src="img/wk.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-oq pt-5 pb-5">
+        <div class="container">
+          <div class="flex flex-col justify-center items-center gap-7 lg:justify-between lg:flex-row">
+            <h1 class="text-2xl text-qora">© BMW AG 2024</h1>
+            <ul class="flex flex-row items-center gap-4 text-qora">
+              <li class="hover:text-blue-600 text-[14px] font-semibold">Контакты</li>
+              <li class="hover:text-blue-600 text-[14px] font-semibold">Copyright</li>
+              <li class="hover:text-blue-600 text-[14px] font-semibold">Политика конфиденциальности</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
